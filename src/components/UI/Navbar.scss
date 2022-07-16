@@ -1,0 +1,40 @@
+$color1: #ffffff;
+$color2: #ededed;
+$color3: #da0037;
+$color4: #444444;
+$color5: #171717;
+
+.navbarWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  .navbarBrand {
+    img {
+      width: 12%;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  .navLinkWrapper {
+    list-style: none;
+    .navLinks {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex: 2 1 auto;
+      li {
+        margin: auto 10px;
+        a {
+          color: $color5;
+        }
+        .activeLink {
+          background-color: red;
+          color: #fff;
+          border-bottom: 1px solid $color3;
+        }
+      }
+    }
+  }
+}

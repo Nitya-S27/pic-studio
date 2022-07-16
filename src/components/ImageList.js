@@ -7,7 +7,7 @@ import { db } from "../config/firebase-config";
 import ImageForm from "./ImageForm";
 import { userActions } from "../store/userSlice";
 import ImageItem from "./ImageItem";
-import { Rings } from "react-loader-spinner";
+
 
 const ImageList = () => {
   const [imageList, setImageList] = useState([]);
@@ -46,6 +46,7 @@ const ImageList = () => {
   const uid = useSelector((state) => state.user) || "";
 
   const onFormSubmit = (q) => {
+    window.scrollTo(0, 500);
     setIsLoading(true);
     unsplash.search
       .getPhotos({
@@ -86,6 +87,7 @@ const ImageList = () => {
       navigate("/login");
     }
   };
+
   return (
     <div>
       <ImageForm onSubmit={onFormSubmit} />

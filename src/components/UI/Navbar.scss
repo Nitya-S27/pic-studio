@@ -19,20 +19,25 @@ $color5: #171717;
   }
   .navLinkWrapper {
     list-style: none;
+    width: 20%;
+    .signIn {
+      text-align: center;
+      a {
+        padding-right: 2%;
+      }
+    }
     .navLinks {
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
-      flex: 2 1 auto;
+      justify-content: space-between;
       li {
-        margin: auto 10px;
+        width: 100%;
         a {
           color: $color5;
         }
         .activeLink {
-          background-color: red;
-          color: #fff;
-          border-bottom: 1px solid $color3;
+          padding-bottom: 5%;
+          border-bottom: 3px solid $color3;
         }
       }
     }

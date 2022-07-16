@@ -22,15 +22,23 @@ const Navbar = () => {
         {userID && userID.trim().length ? (
           <div className="signIn navLinks">
             <li>
-              <NavLink exact activeClassName="activeLink" to="/favourites">
+              <NavLink
+                exact="true"
+                className={(navData) =>
+                  navData.isActive ? "activeLink" : "none"
+                }
+                to="/favourites"
+              >
                 Favourites
               </NavLink>
             </li>
             <li>
               <NavLink
-                exact
+                exact="true"
                 onClick={logoutHandler}
-                activeClassName="activeLink"
+                className={(navData) =>
+                  navData.isActive ? "activeLink" : "none"
+                }
                 to="/"
               >
                 Log Out
@@ -47,12 +55,24 @@ const Navbar = () => {
         ) : (
           <div className="signOut navLinks">
             <li>
-              <NavLink exact activeClassName="activeLink" to="/login">
+              <NavLink
+                exact="true"
+                className={(navData) =>
+                  navData.isActive ? "activeLink" : "none"
+                }
+                to="/login"
+              >
                 Login
               </NavLink>
             </li>
             <li>
-              <NavLink exact activeClassName="activeLink" to="/signup">
+              <NavLink
+                exact="true"
+                className={(navData) =>
+                  navData.isActive ? "activeLink" : "none"
+                }
+                to="/signup"
+              >
                 Sign Up
               </NavLink>
             </li>

@@ -66,7 +66,7 @@ export default function MobileDrawer({ listItem1, listItem2 }) {
       {["right"].map((anchor) => (
         <React.Fragment key={"right"}>
           <Button onClick={toggleDrawer(anchor, true)}>
-            <MenuOpenIcon sx={{ color: "#da0037", fontSize: 35 }} />
+            <MenuOpenIcon sx={{ color: "#da0037", fontSize: 30 }} />
           </Button>
           <Drawer
             anchor={anchor}

@@ -9,6 +9,7 @@ import { Rings } from "react-loader-spinner";
 import "./styles/globals.scss";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./components/UI/Footer";
 
 function App() {
   console.log("APP.JS RERENDERED ");
@@ -57,6 +58,7 @@ function App() {
             draggable
             pauseOnHover
           />
+          <Footer />
         </div>
       )}
     </>

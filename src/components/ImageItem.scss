@@ -10,6 +10,12 @@ $color5: #171717;
   align-items: center;
   justify-content: center;
   margin: 1.1% auto;
+  @media (max-width: 1024px) {
+    padding: inherit 2%;
+  }
+  @media (max-width: 700px) {
+    padding: inherit 4%;
+  }
   .imageContainer {
     display: flex;
     margin: 1.7%;

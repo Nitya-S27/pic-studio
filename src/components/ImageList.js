@@ -7,7 +7,7 @@ import { db } from "../config/firebase-config";
 import ImageForm from "./ImageForm";
 import { userActions } from "../store/userSlice";
 import ImageItem from "./ImageItem";
-
+import "./ImageList.scss";
 
 const ImageList = () => {
   const [imageList, setImageList] = useState([]);
@@ -89,10 +89,12 @@ const ImageList = () => {
   };
 
   return (
-    <div>
+    <div className="imageListWrapper">
       <ImageForm onSubmit={onFormSubmit} />
       {isLoading ? (
-        <p>Loading...</p>
+        <div className="loading-text">
+          <span>Loading...</span>
+        </div>
       ) : (
         <ImageItem imageList={imageList} addToFavHandler={addToFavHandler} />
       )}

@@ -4,6 +4,7 @@ import { auth } from "../../config/firebase-config";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { userActions } from "../../store/userSlice";
+import { toast } from "react-toastify";
 import "./auth.scss";
 
 const SignUp = () => {
@@ -45,12 +46,13 @@ const SignUp = () => {
           setStep(2);
           localStorage.setItem("userID", userCreds.user.uid);
           dispatch(userActions.addUID(userCreds.user.uid));
+          toast.success("Signed up successfully");
           navigate("/");
         } else {
           console.log("NULL uid");
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error("Signup Failed!"));
   };
 
   return (

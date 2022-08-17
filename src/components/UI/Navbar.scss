@@ -42,4 +42,15 @@ $color5: #171717;
       }
     }
   }
+  .navLinkWrapperMobile {
+    display: none;
+  }
+  @media (max-width: 1400px) {
+    .navLinkWrapperWeb {
+      display: none;
+    }
+    .navLinkWrapperMobile {
+      display: block;
+    }
+  }
 }

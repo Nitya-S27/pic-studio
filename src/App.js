@@ -7,6 +7,8 @@ import ImageList from "./components/ImageList";
 import Navbar from "./components/UI/Navbar";
 import { Rings } from "react-loader-spinner";
 import "./styles/globals.scss";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   console.log("APP.JS RERENDERED ");
@@ -44,6 +46,17 @@ function App() {
             <Route exact="true" path="/signup" element={<SignUp />} />
             <Route exact="true" path="/favourites" element={<Favourites />} />
           </Routes>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </div>
       )}
     </>

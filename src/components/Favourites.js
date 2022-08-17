@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../config/firebase-config";
 import { FaHeart, FaHeartBroken } from "react-icons/fa";
+import { toast } from "react-toastify";
+
 import "./Favourites.scss";
 
 const Favourites = () => {
@@ -59,7 +61,8 @@ const Favourites = () => {
       await setDoc(doc(db, "favs", userID), {
         image: [...filteredFavs],
       });
-      alert("Removed From Favourite");
+      toast.success("Removed From Favourite");
+      // alert("Removed From Favourite");
       setFavs(filteredFavs);
     } else {
       navigate("/login");
@@ -92,7 +95,9 @@ const Favourites = () => {
             </div>
           ))
         ) : (
-          <p>Add something to favourites</p>
+          <div className="add-fav-text">
+            <span>Add something to favourites</span>
+          </div>
         )}
       </div>
     </div>
